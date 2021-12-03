@@ -1,7 +1,65 @@
+.color-azul{
+  color: blue;
+}
+body{
+  background-image: linear-gradient(to right,grey,lightgreen);
+}
 .App {
   text-align: center;
 }
+h1{
+  animation-name: saltarin;
+  animation-duration: 70s;
+  animation-iteration-count:infinite;
+  border-color: black;
+}
+@keyframes saltarin {
+  0%{
+      color: green;
+  }
+  12%{
+      color:rgb(30, 255, 0);
+  }
+  24%{
+      color: rgb(16, 59, 2);
+  }
+  36%{
+      color: rgb(30, 255, 0);  
+  }
+  48%{
+      color: green;
+  }
+  60%{
+      color:rgb(30, 255, 0);
+  }
+  72%{
+      color: rgb(16, 59, 2);
+  }
+  84%{
+      color: rgb(30, 255, 0);
+  }
+  100%{
+    color: green;
+  }
+}
+.nav-react{
+ 
+  height: 50px;
+  text-align:center;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  
+}
 
+.link-react{
+text-decoration: none;
+color:rgb(16, 59, 2) ;
+font-size: 2vw;
+   
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
