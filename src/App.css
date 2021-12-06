@@ -7,6 +7,11 @@ body{
 .App {
   text-align: center;
 }
+.imagen-react{
+  height: 6vw;
+  width: 6vw;
+  
+}
 h1{
   animation-name: saltarin;
   animation-duration: 70s;
@@ -44,21 +49,37 @@ h1{
 }
 .nav-react{
  
-  height: 50px;
+  height: 8vw;
+ 
+  display:flex;
+  
+  justify-content: space-evenly;
+}
+.div{
+  flex-basis: 92%;
   text-align:center;
   display:flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   justify-content: space-evenly;
-  
+  position: sticky;
+  top: 0px;
 }
+.div1{
+  text-align: center;
+  display: flex;
+  flex-basis: 5%;
 
+}
 .link-react{
+  display: flex;
+  justify-content: center;
 text-decoration: none;
 color:rgb(16, 59, 2) ;
 font-size: 2vw;
-   
+position: sticky;
+top: 0px;
 }
 .App-logo {
   height: 40vmin;

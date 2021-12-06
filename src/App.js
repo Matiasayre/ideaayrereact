@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import React from "react"
 import './App.css';
 import NavBar from './components/navBar';
+import ItemListContainer from './components/ItemListContainer';
 function App() {
   const styles ={
     color:"red",
@@ -11,8 +12,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Minimarket</h1>
+       <h1>Minimarket</h1>
        <NavBar/>
+       <ItemListContainer greeting="bienvenido" ></ItemListContainer>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

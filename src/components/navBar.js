@@ -1,12 +1,15 @@
 import React from "react"
-
+ import CartWidget from "./CartWidget"
 function NavBar(){
     return(
-      <nav class="nav-react">
-          <a href="h" class="link-react">Inicio</a>
-          <a href="h" class="link-react">Tienda</a>
-          <a href="h" class="link-react">Servicios</a>
-          <a href="h" class="link-react">Contacto</a>
+      <nav className="nav-react">
+          <CartWidget/>
+          <div className="div">
+          <a href="h" className="link-react">Inicio</a>
+          <a href="h" className="link-react">Tienda</a>
+          <a href="h" className="link-react">Servicios</a>
+          <a href="h" className="link-react">Contacto</a>
+          </div>
        </nav>
     )
 }
