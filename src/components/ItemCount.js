@@ -2,7 +2,7 @@ import React from "react"
 
 function ItemCount(){
     
-    const [stock,setStock] =  React.useState(19)
+    const [stock,setStock] = React.useState(19)
     const[text,setText]= React.useState("compre hielo")
     const [buy,setBuy]= React.useState(1)
     const [sold,setSold]= React.useState("su Carrito")
