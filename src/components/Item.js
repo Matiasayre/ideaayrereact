@@ -1,12 +1,12 @@
-
-
-function Item(Items){
+const Item=({item})=>{
   
   return(
-    Items={ id:2,
-     title:"hielo",
-    price:123,
-     pictureUrl:"hielo.jpg"})
+    <div key={item.id} >
+      <p>{item.title}</p>
+      <p>Price:{item.price}$</p>
+      <img src={item.pictureUrl} alt=""></img>
+    </div>
+   )
 }
 
 

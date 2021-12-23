@@ -1,15 +1,16 @@
 import React from "react"
 import ItemCount from "./ItemCount.js"
 import Itemlist from "./ItemList.js"
-function ItemListContainer(props){
-    const {greeting:value}=props
-    const [item,setItem] =  React.useState()
+import Contenido from "../json/item.json"
+function ItemListContainer(content){
+   
+    const [items,setitems] =  React.useState([])
     return(
-        <div style={{color:"green"}}>{value}
+        <div style={{color:"green"}}>
          <ItemCount/>
          
          <div>
-             {item}
+         <Itemlist items={Contenido}/>
             <button  onClick={()=>{
                 const list = new Promise((res,rej)=>{
                     res(true)
@@ -17,7 +18,7 @@ function ItemListContainer(props){
                 let time = ()=>{
                   setTimeout(()=>{
                     if (time) {
-                        setItem(<Itemlist />)
+                        console.log(items)
                     }
                    },1000)
                 }
