@@ -1,8 +1,29 @@
-[
+{
+  "Product":[
   {
     "id":1,
-    "title:":"hielo",
+    "title":"hielo",
     "price":123,
     "pictureUrl":"hielo.jpg"
+  },
+  {
+    "id":2,
+    "title":"gaseosa",
+    "price":12,
+    "pictureUrl":"gaseosa.jpg"
   }  
+],"description":[
+{
+  "id":1,
+  "stock":20,
+  "marca":"hielo",
+  "descripcion":"bolsa de hielo de 1kg"
+},{
+
+  "id":2,
+  "stock":20,
+  "marca":"coca-cola",
+  "descripcion":"bebida de dos litros zero azucar"
+}
 ]
+}

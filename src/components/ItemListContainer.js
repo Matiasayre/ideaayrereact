@@ -1,16 +1,16 @@
 import React from "react"
-import ItemCount from "./ItemCount.js"
+import { NavLink } from "react-router-dom";
+
 import Itemlist from "./ItemList.js"
-import Contenido from "../json/item.json"
+import NavBar from "./navBar.js";
 function ItemListContainer(content){
-   
+   const [param,setParam]= React.useState(true)
     const [items,setitems] =  React.useState([])
     return(
         <div style={{color:"green"}}>
-         <ItemCount/>
-         
          <div>
-         <Itemlist items={Contenido}/>
+         <NavBar/>
+         {items}
             <button  onClick={()=>{
                 const list = new Promise((res,rej)=>{
                     res(true)
@@ -18,7 +18,13 @@ function ItemListContainer(content){
                 let time = ()=>{
                   setTimeout(()=>{
                     if (time) {
-                        console.log(items)
+                      if(param===true){
+                        setitems( <Itemlist/>)
+                        setParam(false)
+                      }else{
+                        setitems([])
+                        setParam(true)
+                      }
                     }
                    },1000)
                 }
@@ -27,7 +33,7 @@ function ItemListContainer(content){
                 }).catch((err)=>{
                   console.log(err)
                 })
-                }}>detalles del producto</button>
+                }}>Productos</button>
             </div>
         </div>
     )

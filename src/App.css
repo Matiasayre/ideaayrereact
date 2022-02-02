@@ -12,6 +12,9 @@ body{
   width: 6vw;
   
 }
+#hello{
+  border: 1px solid black
+}
 h1{
   animation-name: saltarin;
   animation-duration: 70s;
@@ -62,7 +65,7 @@ h1{
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content:space-evenly;
   position: sticky;
   top: 0px;
 }

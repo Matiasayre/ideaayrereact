@@ -1,8 +1,12 @@
 import React from "react"
-import imagen from '../images/carrito.jpg'
+import Cart from "./Cart"
+import NavBar from "./navBar"
 function CartWidget(){
     return(
-        <div className="div1"><img src={imagen} alt="error 404" className="imagen-react"/></div>
+        <div >
+            <NavBar/>
+        <Cart />
+        </div>
     )
 }
 

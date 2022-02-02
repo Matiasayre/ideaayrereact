@@ -1,12 +1,46 @@
 import logo from './logo.svg';
 import React,{useEffect,useState} from "react"
 import './App.css';
-
+import CartWidget from "./components/CartWidget"
 import { BrowserRouter,Routes,Route,NavLink,Link,useParams } from 'react-router-dom';
 import NavBar from './components/navBar';
 import ItemListContainer from './components/ItemListContainer';
-function App() {
-  const styles ={
+import react from 'react';
+import Item from './components/Item';
+// function Helloworld(props){
+//   return(
+//     <div id="hello">
+//     {props.text}
+//     <h3>{props.subtitle}</h3>
+    
+//     </div>
+//   )
+// }
+class Helloworld extends react.Component{
+  state={
+    show:true
+  }
+  cambiar=()=>{
+    this.setState({show:!this.state.show})
+  }
+  render(){
+    if(this.state.show){
+      return(
+        <div id="hello">
+        {this.props.text}
+        <h3>{this.props.subtitle}</h3>
+        <button onClick={this.cambiar}>cambiar</button>
+        </div>
+      )
+    }else{
+        return <h1>
+          no hay elementos
+          <button onClick={this.cambiar}>cambiar</button>
+          </h1>
+    } 
+  }
+}
+const styles ={
     color:"red",
     backgroundColor:"yellow"
   }
@@ -15,48 +49,40 @@ function App() {
    const Landing=()=><div>Landing</div>
    const List=()=><div><Link to="/home">Home</Link><ItemListContainer greeting="bienvenido" ><p><Link to="/home">Home</Link></p></ItemListContainer></div>
    const ListParams=()=><div><Link to="/home">Home</Link><ItemListContainer greeting="bienvenido" ><p><Link to="/home">Home</Link></p></ItemListContainer></div>
-  const params= useParams()
-  const [state,setState]= useState()
-  useEffect(()=>{
-    console.log(params)
-    return console.log(params)
-  },[])
-   return (
+  
+  // useEffect(()=>{
+  //   const params= useParams()
+  // const [state,setState]= useState()
+  //   console.log(params)
+  //   return console.log(params)
+  // },[])
+  
+    
+  
+function App() {
+ 
+  return(
     <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Landing></Landing>}></Route>
-        <Route exact path="/home" element={<Home></Home>}></Route>
-        <Route exact path="/list" element={<List></List>}></Route>
-        <Route exact path="/Landing/:id" element={<ListParams></ListParams>}></Route>
-        <Route exact path="/Landing/" element={<List></List>}></Route>
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route exact path="/" element={<NavBar/>}></Route>
+      <Route exact path="/tienda" element={<ItemListContainer/>}></Route>
+      <Route exact path="/carrito" element={<CartWidget/>}></Route>
+      <Route exact path="/tienda/:did" element={<ItemListContainer/>}></Route>
+    </Routes>
+  </BrowserRouter>
+
   );
+    //  <div>componente:
+    //   <Helloworld text="hello amigou" subtitle="bienvenido"/>
+    //  <Helloworld text="hello inimigou"subtitle="vete de aqui" />
+    //  <Helloworld text="hello who?"subtitle="lo ignora..." />
+    //  </div>
+
+
+
+  
 }
 // https://stackblitz.com/edit/react-tlufpe?file=src/App.js
 export default App;
 
 
-{/* <div className="App">
-       <h1>Minimarket</h1>
-       <NavBar/>
-     
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p style={styles}>hola</p>
-        <p className="color-azul" style={{color:"blue"}}>hola</p>
-
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {text}
-          Learn React
-        </a>
-      </header>
-    </div> */}
